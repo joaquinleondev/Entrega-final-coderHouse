@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik';
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "hola attribution"
+    "phone text";
+    align-items: center;
+    justify-items: center;
+}
+.mobile {
+    grid-area: phone;
+    position: relative;
+    height: 68%;
+    width: 300px;
+    left: 30%;
+    border: solid #fff 10px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.178);
+    background-color: #fff;
+    display: inline-block;
+    min-height: 580px;
+}
+.mobile::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 45%;
+    height: 4%;
+    top: -2px;
+    left: 50%;
+    border-radius: 0 0 15px 15px;
+    transform: translateX(-50%);
+}
+.header {
+    background: linear-gradient(to left, #23233D, #FEC93F);
+    border-radius: 30px 30px 5px 5px;
+    display: flex;
+    height: 15%;
+    padding: 0 15px;
+    padding-top: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+.header h5 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+}
+.profile {
+    border-radius: 50%;
+    border: solid #fff 1px;
+    height: 60%;
+    transform: translateX(-50%);
+    background-color: #fff;
+}
+.header p {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+}
+.backIcon {
+    color: #fff;
+    top: 50%;
+}
+.moreIcon {
+    color: #fff;
+
+}
+.header div {
+    transform: translateX(-31%);
+}
+.msg {
+    color: #23233D;
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 10px;
+    max-width: 60%;
+    background-color: #4b4b949f;
+    padding: 5px;
+    margin: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.123);
+}
+.m3 {
+    transform: translateX(65%);
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+.m3 img{
+    border-radius: 10px;
+    height: 40px;
+}
+.m4 {
+    transform: translateX(65%);
+    background-color: #fff;
+}
+.m5 {
+    transform: translateX(130%);
+    background-color: #fff;
+    width: fit-content;
+}
+.m7, .m8 {
+    background: linear-gradient(to right, #23233D, #FEC93F);
+    color: #fff;
+    border-radius: 10px 10px 10px 2px;
+    min-height: 30px;
+    line-height: 30px;
+    position: relative;
+    padding-left: 30px;
+}
+.m7::after, .m8::after {
+    content: "$29";
+    position: absolute;
+    right: 5px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.m8::after {
+    content: "$49";
+}
+.m7::before, .m8::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid 1px #fff;
+}
+.input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+input {
+    border: none;
+    width: 90%;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    color: hsl(206, 6%, 79%);
+    padding: 10px;
+}
+input::placeholder {
+    color: hsl(206, 6%, 79%);
+}
+.arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.textos {
+    grid-area: text;
+    position: relative;
+    display: inline-block;
+    width: 70%;
+}
+.textos h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 10%;
+    color: #23233D;
+}
+.textos h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: hsl(206, 6%, 79%);
+    line-height: 25px;
+}
+.attribution {
+    grid-area: attribution;
+    position: relative;
+}
+.bg {
+    height: 90%;
+    width: 50%;
+    position: absolute;
+    left: -15%;
+    top: 0;
+    background: linear-gradient(to bottom left, #23233D, #FEC93F);
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.116);
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "attribution"
+        "phone"
+        "text";
+        grid-gap: 50px;
+    }
+    .mobile {
+        left: 0;
+    }
+    .bg {
+        position: fixed;
+        width: 80%;
+        top: 0;
+        left: -35%;
+        max-height: 700px;
+    }
+    .textos h1 {
+        margin-bottom: 20px;
+    }
+    .attribution {
+        width: 50%;
+        justify-self: end;
+    }
+}
